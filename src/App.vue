@@ -1,20 +1,26 @@
 <template>
   <div id="app">
      <!-- <HelloWorld/> -->
-     <Number/>
+     <!-- <Number/> -->
+     <!-- <lineCharts/> -->
+     <TestVuex/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
 import Number from './components/number'
+import TestVuex from './components/testVuex'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Number
-  }
+    Number,
+    TestVuex
+    // lineCharts
+  },
+  
 }
 </script>
 

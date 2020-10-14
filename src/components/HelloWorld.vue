@@ -1,14 +1,20 @@
 <template>
   <div class="hello">
-    <video id="myvideo" @click="click" autoplay="autoplay"></video>
+    <!-- <video id="myvideo" @click="click" autoplay="autoplay"></video> -->
+         <lineCharts @chartFunc="chartFunc"/>
+
   </div>
 </template>
 
 <script>
 import flv from "flv.js";
+import lineCharts from "./lineCharts"
 
 export default {
   name: "HelloWorld",
+  components:{
+    lineCharts
+  },
   data() {
     return {
       player: true,
@@ -17,21 +23,25 @@ export default {
     };
   },
   created() {
-    if (flv.isSupported()) {
-      this.player = flv.createPlayer({
-        type: "flv",
-        url:
-          "http://pull-flv-l1.douyincdn.com/third/stream-107342375283327014.flv",
-      });
-    }
+    // if (flv.isSupported()) {
+    //   this.player = flv.createPlayer({
+    //     type: "flv",
+    //     url:
+    //       "http://pull-flv-l1.douyincdn.com/third/stream-107342375283327014.flv",
+    //   });
+    // }
   },
   mounted() {
-    var video = document.querySelector("#myvideo");
-    this.player.attachMediaElement(video);
-    this.player.load();
+    console.log(this.$store.state)
+    // var video = document.querySelector("#myvideo");
+    // this.player.attachMediaElement(video);
+    // this.player.load();
    
   },
   methods: {
+    chartFunc(item) {
+      console.log(item.value)
+    },
     click() {
       if (this.playing) {
         this.player.pause();
