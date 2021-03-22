@@ -7,11 +7,11 @@
       {{ item.content }}
     </div>
     <div>{{ getTodoById(3).id }},{{ getTodoById(3).content }}</div>
+    <input type="text" v-focus>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import store from "../store.js";
 import { mapState,mapGetters, mapMutations } from "vuex";
 export default {
   data() {

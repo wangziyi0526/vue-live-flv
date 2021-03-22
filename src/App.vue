@@ -4,6 +4,7 @@
      <!-- <Number/> -->
      <!-- <lineCharts/> -->
      <TestVuex/>
+     <vuedraggable/>
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import HelloWorld from './components/HelloWorld'
 import Number from './components/number'
 import TestVuex from './components/testVuex'
+import vuedraggable from './components/vueDraggable'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Number,
-    TestVuex
+    TestVuex,
+    vuedraggable
     // lineCharts
   },
   
