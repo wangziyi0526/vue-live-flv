@@ -5,7 +5,7 @@
      <!-- <Number/> -->
      <!-- <lineCharts/> -->
      <!-- <TestVuex/> -->
-     <Hello/>
+     <antvx/>
      <!-- <vuedraggable/> -->
   </div>
 </template>
@@ -16,7 +16,7 @@ import Number from './components/number'
 import lineCharts from './components/lineCharts'
 import TestVuex from './components/testVuex'
 import vuedraggable from './components/vueDraggable'
-import Hello from './components/Hello'
+import antvx from './components/antvx6/antvx'
  
 export default {
   name: 'App',
@@ -29,7 +29,7 @@ export default {
     Number,
     TestVuex,
     vuedraggable,
-    Hello
+    antvx
    },
   
 }
