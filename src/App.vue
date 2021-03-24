@@ -1,28 +1,36 @@
 <template>
   <div id="app">
+     
      <!-- <HelloWorld/> -->
      <!-- <Number/> -->
      <!-- <lineCharts/> -->
-     <TestVuex/>
-     <vuedraggable/>
+     <!-- <TestVuex/> -->
+     <Hello/>
+     <!-- <vuedraggable/> -->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
 import Number from './components/number'
+import lineCharts from './components/lineCharts'
 import TestVuex from './components/testVuex'
 import vuedraggable from './components/vueDraggable'
-
+import Hello from './components/Hello'
+ 
 export default {
   name: 'App',
+  data(){
+    return{}
+  },
   components: {
     HelloWorld,
+    lineCharts,
     Number,
     TestVuex,
-    vuedraggable
-    // lineCharts
-  },
+    vuedraggable,
+    Hello
+   },
   
 }
 </script>
@@ -35,5 +43,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

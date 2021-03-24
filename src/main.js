@@ -5,6 +5,8 @@ import App from './App'
 import Vuex from 'vuex';
 // import echarts from 'echarts'
 import store from './store.js'
+import ElementUI from 'element-ui';
+Vue.use(ElementUI);
 
 Vue.use(Vuex)
 // Vue.prototype.$echarts = echarts
