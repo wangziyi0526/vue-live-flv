@@ -9,7 +9,7 @@
         <el-aside width="200px">
           <el-menu
             router
-            default-active="1"
+            :default-active="defaultActivePath"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
@@ -36,6 +36,7 @@ import {mapState, mapMutations, mapActions, mapGetters} from "vuex";
 export default {
   data() {
     return {
+      defaultActivePath:'',
       list: [
         {
           children: [
@@ -89,6 +90,11 @@ export default {
   created() {
   },
   mounted() {
+
+    this.defaultActivePath = this.$route.path
+  },
+  updated() {
+    this.defaultActivePath = this.$route.path
 
   },
 
