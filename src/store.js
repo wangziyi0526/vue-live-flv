@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  // 
+  //
   state: {
     name: 'Kobe Bryant',
     num: 24,
@@ -34,13 +34,36 @@ const store = new Vuex.Store({
         done: true,
         content: '工作',
         id:5
+      }
+    ],
+  //  路由数组
+    routerArray:[
+      {
+        title:'首页',
+        path: '/'
       },
-
-    ]
+      {
+        title:'数字页',
+        path: '/home'
+      }
+    ],
+    activeRouterTitle:'首页'
   },
   mutations: {
     CHANGE_NAME (state,payload) {
       state.name = payload.name
+    },
+    // 新增
+    PUSH_ROUTER (state,payload){
+      state.routerArray.push(payload)
+    },
+    // 删除
+    DELETE_ROUTER (state,payload){
+      state.routerArray = state.routerArray.filter(item => item.title !=payload)
+    },
+    // 更改选中样式名字
+    CHANGE_ROUTERTITLE(state,payload){
+      state.activeRouterTitle = payload
     }
   },
   getters: {

@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <antvx />
-    <!-- <Warp/> -->
+<!--    <antvx />-->
+<!--     <Warp/>-->
+<!--    <component is="number"></component>-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import Number from "./components/number";
-import lineCharts from "./components/lineCharts";
-import TestVuex from "./components/testVuex";
-import vuedraggable from "./components/vueDraggable";
-import antvx from "./components/antvx6/antvx";
-import Warp from "./components/warp"
+// import HelloWorld from "./components/HelloWorld";
+// import Number from "./components/number";
+// import lineCharts from "./components/lineCharts";
+// import TestVuex from "./components/testVuex";
+// import vuedraggable from "./components/vueDraggable";
+// import antvx from "./components/antvx6/antvx";
+// import Warp from "./components/warp"
 
 export default {
   name: "App",
@@ -20,12 +22,12 @@ export default {
     return {};
   },
   components: {
-    HelloWorld,
-    Number,
-    TestVuex,
-    vuedraggable,
-    antvx,
-    Warp
+    // HelloWorld,
+    // Number,
+    // TestVuex,
+    // vuedraggable,
+    // antvx,
+    // Warp
   },
 };
 </script>
@@ -37,6 +39,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
- 
+
 }
 </style>

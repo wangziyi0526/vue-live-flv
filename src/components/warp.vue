@@ -2,21 +2,27 @@
 <template>
   <div class="warp">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <Header/>
+      </el-header>
       <el-container>
         <el-aside width="200px">
           <el-menu
-            default-active="2"
+            router
+            default-active="1"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
+            @select="selectIt"
           >
-          <div v-for="item in list" :key="item.parentId">
-            <Left :item="item"/>
-          </div>
+            <div v-for="item in list" :key="item.parentId">
+              <Left :item="item"/>
+            </div>
           </el-menu>
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -24,39 +30,23 @@
 
 <script>
 import Left from "./left";
+import Header from "./header"
+import {mapState, mapMutations, mapActions, mapGetters} from "vuex";
+
 export default {
   data() {
     return {
       list: [
         {
           children: [
-            {
-             
-              flag: "menu",
-              id: "46025611226910727",
-              menuIcon: "el-icon-house",
-              menuName: "首页111-3",
-              menuUrl: "home",
-              parentId: "5",
-               children: [
-                {
-                  children: [],
-                  flag: "menu",
-                  id: "46025611226910727",
-                  menuIcon: "el-icon-house",
-                  menuName: "首页111-3-1",
-                  menuUrl: "home",
-                  parentId: "6",
-                },
-              ]
-            },
+
             {
               children: [],
               flag: "menu",
               id: "46025611226910727",
               menuIcon: "el-icon-house",
               menuName: "首页111-2",
-              menuUrl: "home",
+              menuUrl: "/",
               parentId: "4",
             },
             {
@@ -65,7 +55,7 @@ export default {
               id: "46025611226910727",
               menuIcon: "el-icon-house",
               menuName: "首页111-1",
-              menuUrl: "home",
+              menuUrl: "/home",
               parentId: "3",
             },
           ],
@@ -73,33 +63,45 @@ export default {
           id: "46025611226910727",
           menuIcon: "el-icon-house",
           menuName: "首页111",
-          menuUrl: "home",
+          menuUrl: "/",
           parentId: "1",
         },
 
         {
-          children:[],
+          children: [],
           flag: "menu",
           id: "46025611226910727",
           menuIcon: "el-icon-house",
           menuName: "正常",
-          menuUrl: "home",
+          menuUrl: "/music",
           parentId: "2",
         }
       ],
     };
   },
 
-  components: { Left },
+  components: {Left, Header},
 
-  computed: {},
+  computed: {
+    ...mapState(['routerArray'])
+  },
 
-  created() {},
-  mounted() {},
+  created() {
+  },
+  mounted() {
+
+  },
+
 
   methods: {
-    handleOpen() {},
-    handleClose() {},
+
+    handleOpen() {
+    },
+    handleClose() {
+    },
+    selectIt(e) {
+      console.log(e)
+    }
   },
 };
 </script>
@@ -107,9 +109,11 @@ export default {
 .warp {
   width: 100%;
   height: 100vh;
+
   .el-container {
     width: 100%;
     height: 100vh;
+
     .el-header {
       background-color: #b3c0d1;
       color: #333;
